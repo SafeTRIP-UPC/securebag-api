@@ -1,0 +1,17 @@
+services:
+  api-service:
+    container_name: api-container
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: api-secure-bag:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - ./:/app-backend
+    networks:
+      - internalnet
+
+networks:
+  internalnet:
+    driver: bridge
