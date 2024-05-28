@@ -42,7 +42,6 @@ public class LuggageServiceImpl implements LuggageService {
     public Luggage updateLuggageById(Long id, LuggageRequest luggageRequest) {
         Luggage luggageToUpdate = luggageRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Luggage not found with id: " + id));
-
         modelMapper.map(luggageRequest, luggageToUpdate);
 
         return luggageRepository.save(luggageToUpdate);
