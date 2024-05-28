@@ -6,14 +6,14 @@ spring:
     name: SECURE-BAG-API
 
   datasource:
-    url: jdbc:mysql://localhost:3306/secure_bag?useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/secure_bag?useSSL=true&createDatabaseIfNotExist=true&serverTimezone=UTC
     username: root # wilverar
     password: 280101 # warraw*280101
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     open-in-view: false
     show-sql: true
     properties:
