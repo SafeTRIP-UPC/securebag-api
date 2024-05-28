@@ -49,7 +49,6 @@ public class PolicyServiceImpl implements PolicyService {
     public Policy updatePolicyById(Long id, PolicyRequest luggageRequest) {
         Policy policyToUpdate = policyRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Policy not found with id: " + id));
-
         modelMapper.map(luggageRequest, policyToUpdate);
 
         return policyRepository.save(policyToUpdate);

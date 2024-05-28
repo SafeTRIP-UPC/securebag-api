@@ -7,7 +7,7 @@ import java.util.Optional;
 
 public interface LuggageService {
     Long createLuggage(LuggageRequest luggageRequest);
-    Optional<Luggage> getLuggageById(Long id);
+    Optional<Luggage> getLuggageById(Long luggageId);
     Luggage updateLuggageById(Long id, LuggageRequest luggageRequest);
     void deleteLuggageById(Long id);
 }
