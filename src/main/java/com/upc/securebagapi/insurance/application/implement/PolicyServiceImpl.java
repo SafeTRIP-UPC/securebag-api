@@ -41,24 +41,24 @@ public class PolicyServiceImpl implements PolicyService {
     }
 
     @Override
-    public Optional<Policy> getPolicyById(Long id) {
-        return policyRepository.findById(id);
+    public Optional<Policy> getPolicyById(Long policyId) {
+        return policyRepository.findById(policyId);
     }
 
     @Override
-    public Policy updatePolicyById(Long id, PolicyRequest luggageRequest) {
-        Policy policyToUpdate = policyRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Policy not found with id: " + id));
+    public Policy updatePolicyById(Long policyId, PolicyRequest luggageRequest) {
+        Policy policyToUpdate = policyRepository.findById(policyId)
+                .orElseThrow(() -> new ResourceNotFoundException("Policy not found with id: " + policyId));
         modelMapper.map(luggageRequest, policyToUpdate);
 
         return policyRepository.save(policyToUpdate);
     }
 
     @Override
-    public void deletePolicyById(Long id) {
-        if (!policyRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Policy not found with id: " + id);
+    public void deletePolicyById(Long policyId) {
+        if (!policyRepository.existsById(policyId)) {
+            throw new ResourceNotFoundException("Policy not found with id: " + policyId);
         }
-        policyRepository.deleteById(id);
+        policyRepository.deleteById(policyId);
     }
 }

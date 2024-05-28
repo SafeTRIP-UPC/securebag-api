@@ -44,19 +44,19 @@ public class ComplaintServiceImpl implements ComplaintService {
     }
 
     @Override
-    public Complaint updateComplaintById(Long id, ComplaintRequest complaintRequest) {
-        Complaint complaintToUpdate = complaintRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Complaint not found with id: " + id));
+    public Complaint updateComplaintById(Long complaintId, ComplaintRequest complaintRequest) {
+        Complaint complaintToUpdate = complaintRepository.findById(complaintId)
+                .orElseThrow(() -> new ResourceNotFoundException("Complaint not found with id: " + complaintId));
         modelMapper.map(complaintRequest, complaintToUpdate);
 
         return complaintRepository.save(complaintToUpdate);
     }
 
     @Override
-    public void deleteComplaintById(Long id) {
-        if (!complaintRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Complaint not found with id: " + id);
+    public void deleteComplaintById(Long complaintId) {
+        if (!complaintRepository.existsById(complaintId)) {
+            throw new ResourceNotFoundException("Complaint not found with id: " + complaintId);
         }
-        complaintRepository.deleteById(id);
+        complaintRepository.deleteById(complaintId);
     }
 }

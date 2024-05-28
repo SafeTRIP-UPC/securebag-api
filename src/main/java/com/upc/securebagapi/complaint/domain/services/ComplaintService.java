@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface ComplaintService {
     Long createComplaint(ComplaintRequest complaintRequest);
     Optional<Complaint> getComplaintById(Long complaintId);
-    Complaint updateComplaintById(Long id, ComplaintRequest complaintRequest);
-    void deleteComplaintById(Long id);
+    Complaint updateComplaintById(Long complaintId, ComplaintRequest complaintRequest);
+    void deleteComplaintById(Long complaintId);
 }
