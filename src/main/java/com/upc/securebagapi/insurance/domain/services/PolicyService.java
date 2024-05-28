@@ -11,6 +11,6 @@ import java.util.Optional;
 public interface PolicyService {
     Long createPolicy(PolicyRequest luggageRequest);
     Optional<Policy> getPolicyById(Long policyId);
-    Policy updatePolicyById(Long id, PolicyRequest luggageRequest);
-    void deletePolicyById(Long id);
+    Policy updatePolicyById(Long policyId, PolicyRequest luggageRequest);
+    void deletePolicyById(Long policyId);
 }

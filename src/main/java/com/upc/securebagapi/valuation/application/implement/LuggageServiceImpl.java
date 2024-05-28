@@ -34,24 +34,24 @@ public class LuggageServiceImpl implements LuggageService {
     }
 
     @Override
-    public Optional<Luggage> getLuggageById(Long id) {
-        return luggageRepository.findById(id);
+    public Optional<Luggage> getLuggageById(Long luggageId) {
+        return luggageRepository.findById(luggageId);
     }
 
     @Override
-    public Luggage updateLuggageById(Long id, LuggageRequest luggageRequest) {
-        Luggage luggageToUpdate = luggageRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Luggage not found with id: " + id));
+    public Luggage updateLuggageById(Long luggageId, LuggageRequest luggageRequest) {
+        Luggage luggageToUpdate = luggageRepository.findById(luggageId)
+                .orElseThrow(() -> new ResourceNotFoundException("Luggage not found with id: " + luggageId));
         modelMapper.map(luggageRequest, luggageToUpdate);
 
         return luggageRepository.save(luggageToUpdate);
     }
 
     @Override
-    public void deleteLuggageById(Long id) {
-        if (!luggageRepository.existsById(id)) {
-            throw new ResourceNotFoundException("Luggage not found with id: " + id);
+    public void deleteLuggageById(Long luggageId) {
+        if (!luggageRepository.existsById(luggageId)) {
+            throw new ResourceNotFoundException("Luggage not found with id: " + luggageId);
         }
-        luggageRepository.deleteById(id);
+        luggageRepository.deleteById(luggageId);
     }
 }
