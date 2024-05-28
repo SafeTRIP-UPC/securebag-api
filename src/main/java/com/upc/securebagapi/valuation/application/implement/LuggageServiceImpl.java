@@ -25,7 +25,7 @@ public class LuggageServiceImpl implements LuggageService {
     @Override
     public Long createLuggage(LuggageRequest luggageRequest) {
         if (userRepository.existsByUserId(luggageRequest.getUserEntity().getUserId())) {
-            throw new ValidationException("User already has a luggage created with id: " + luggageRequest.getUserEntity().getUserId());
+            throw new ValidationException("Luggage already has a User created with id: " + luggageRequest.getUserEntity().getUserId());
         }
         Luggage luggage = new Luggage();
         modelMapper.map(luggageRequest, luggage);
