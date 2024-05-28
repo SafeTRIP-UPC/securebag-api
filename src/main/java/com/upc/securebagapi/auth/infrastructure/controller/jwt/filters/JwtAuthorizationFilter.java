@@ -1,7 +1,7 @@
-package com.upc.securebagapi.shared.infrastructure.jwt.filters;
+package com.upc.securebagapi.auth.infrastructure.controller.jwt.filters;
 
 import com.upc.securebagapi.auth.application.implement.UserDetailsServiceImpl;
-import com.upc.securebagapi.shared.infrastructure.jwt.utils.JwtUtil;
+import com.upc.securebagapi.auth.infrastructure.controller.jwt.utils.JwtUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

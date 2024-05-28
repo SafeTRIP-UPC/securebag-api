@@ -1,5 +1,6 @@
 package com.upc.securebagapi.auth.domain.models.entity;
 
+import com.upc.securebagapi.auth.domain.models.entity.RoleEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,7 +16,7 @@ import java.util.Set;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
     @Column(name = "email", unique = true, nullable = false, length = 50)
     private String email;

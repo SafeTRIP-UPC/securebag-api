@@ -1,4 +1,4 @@
-package com.upc.securebagapi.shared.infrastructure.jwt.utils;
+package com.upc.securebagapi.auth.infrastructure.controller.jwt.utils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

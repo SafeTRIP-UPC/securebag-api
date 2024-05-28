@@ -1,8 +1,8 @@
 package com.upc.securebagapi.shared.infrastructure.config.security;
 
-import com.upc.securebagapi.shared.infrastructure.jwt.filters.JwtAuthenticationFilter;
-import com.upc.securebagapi.shared.infrastructure.jwt.filters.JwtAuthorizationFilter;
-import com.upc.securebagapi.shared.infrastructure.jwt.utils.JwtUtil;
+import com.upc.securebagapi.auth.infrastructure.controller.jwt.filters.JwtAuthenticationFilter;
+import com.upc.securebagapi.auth.infrastructure.controller.jwt.filters.JwtAuthorizationFilter;
+import com.upc.securebagapi.auth.infrastructure.controller.jwt.utils.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
